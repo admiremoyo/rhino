@@ -1,0 +1,12 @@
+{
+  "name": "RhinoFence Fencing Zimbabwe",
+  "short_name": "RhinoFence",
+  "description": "Clear view, palisade, electric & game fencing, razor wire, gates and steel works across Zimbabwe.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f1115",
+  "theme_color": "#0f1115",
+  "icons": [
+    { "src": "/assets/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
