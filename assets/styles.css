@@ -147,6 +147,15 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 }
 .quote-field textarea { resize: vertical; min-height: 74px; }
 
+/* ---------- Photo hero variant ---------- */
+.hero--photo {
+  background:
+    linear-gradient(180deg, rgba(15, 17, 21, .72) 0%, rgba(15, 17, 21, .55) 45%, rgba(15, 17, 21, .9) 100%),
+    url("/assets/img/hero.svg") center 64% / cover no-repeat,
+    var(--steel-900);
+}
+.hero--photo::after { display: none; }
+
 /* ---------- Marquee / stats ---------- */
 .stat-strip { background: var(--steel-800); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 34px 0; }
@@ -166,6 +175,14 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
   position: relative; display: flex; flex-direction: column;
 }
 .card:hover { transform: translateY(-4px); border-color: var(--steel-500); box-shadow: var(--shadow); }
+.card--media { padding: 0; overflow: hidden; }
+.card--media .card-body { padding: 22px 24px 26px; display: flex; flex-direction: column; flex: 1; }
+.card-img {
+  width: 100%; aspect-ratio: 8 / 5; object-fit: cover; display: block;
+  border-bottom: 1px solid var(--line);
+  transition: transform .35s ease;
+}
+.card--media:hover .card-img { transform: scale(1.04); }
 .card .ico {
   width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center;
   background: rgba(255, 106, 19, .12); color: var(--accent-2); margin-bottom: 18px;
@@ -196,6 +213,16 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
   border: 1px solid var(--line); border-radius: var(--radius); padding: 34px;
   box-shadow: var(--shadow);
 }
+
+/* ---------- Showcase ---------- */
+.showcase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.showcase-grid figure {
+  margin: 0; border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; background: var(--steel-800); transition: transform .2s ease, border-color .2s ease;
+}
+.showcase-grid figure:hover { transform: translateY(-4px); border-color: var(--steel-500); }
+.showcase-grid img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.showcase-grid figcaption { padding: 15px 19px; font-size: .93rem; color: var(--text-dim); font-weight: 600; }
 
 /* ---------- Process ---------- */
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; counter-reset: step; }
@@ -282,6 +309,12 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 
 /* ---------- Breadcrumbs / page hero ---------- */
 .page-hero { padding: 60px 0 44px; background: linear-gradient(180deg, var(--steel-800), var(--steel-900)); border-bottom: 1px solid var(--line); position: relative; }
+.page-hero--photo {
+  padding: 84px 0 64px;
+  background-size: cover !important;
+  background-position: center 70% !important;
+  background-repeat: no-repeat !important;
+}
 .crumbs { font-size: .88rem; color: var(--text-mute); margin-bottom: 16px; }
 .crumbs a { color: var(--text-dim); }
 .crumbs a:hover { color: var(--accent-2); }
@@ -326,7 +359,7 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 @media (max-width: 640px) {
   body { font-size: 16px; }
   .section { padding: 62px 0; }
-  .grid--3, .grid--2, .loc-grid { grid-template-columns: 1fr; }
+  .grid--3, .grid--2, .loc-grid, .showcase-grid { grid-template-columns: 1fr; }
   .nav-links, .nav-cta .btn--ghost { display: none; }
   .nav-toggle { display: block; }
   .nav-links.open {

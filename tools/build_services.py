@@ -386,7 +386,7 @@ def render(s):
 </header>
 
 <main>
-<section class="page-hero">
+<section class="page-hero page-hero--photo" style="background-image: linear-gradient(180deg, rgba(15,17,21,.78) 0%, rgba(15,17,21,.6) 45%, rgba(15,17,21,.94) 100%), url('/assets/img/scene-{s["slug"]}.svg')">
   <div class="container">
     <nav class="crumbs" aria-label="Breadcrumb">
       <a href="/">Home</a> &rsaquo; <a href="/#services">Services</a> &rsaquo; <span>{s["name"]}</span>
