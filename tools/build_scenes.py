@@ -20,7 +20,7 @@ SKIES = {
 
 SIL = "#101318"          # silhouette colour
 SIL2 = "#171b22"         # nearer silhouette
-RIM = "#ffb066"          # rim-light
+RIM = "#ffd45e"          # rim-light (brand gold)
 
 
 def sky(scheme, w=W, h=H):

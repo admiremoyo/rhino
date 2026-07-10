@@ -1,21 +1,22 @@
 /* ==========================================================================
    RhinoFence Fencing Zimbabwe — Design System
-   Lightweight, dependency-free, dark industrial theme with safety-orange accent
+   Lightweight, dependency-free, dark navy theme with brand gold accent (logo: #031f4d / #f0c000)
    ========================================================================== */
 
 :root {
-  --steel-900: #0f1115;
-  --steel-800: #161a20;
-  --steel-700: #1e242c;
-  --steel-600: #2a323d;
-  --steel-500: #3a4552;
-  --line: #2c343f;
-  --text: #e8ecf1;
-  --text-dim: #a7b0bd;
-  --text-mute: #7d8794;
-  --accent: #ff6a13;      /* safety orange */
-  --accent-2: #ff8a3d;
-  --accent-dark: #c74e08;
+  /* Brand: RhinoFence navy + gold (from logo: navy #031f4d, gold #f0c000) */
+  --steel-900: #081124;
+  --steel-800: #0d1a36;
+  --steel-700: #142548;
+  --steel-600: #1d3260;
+  --steel-500: #2e4478;
+  --line: #20335e;
+  --text: #eaeef6;
+  --text-dim: #aab6d2;
+  --text-mute: #8290b0;
+  --accent: #f5c400;      /* brand gold */
+  --accent-2: #ffd23d;
+  --accent-dark: #b38f00;
   --green: #2fbf71;       /* trust / go */
   --white: #ffffff;
   --radius: 14px;
@@ -75,8 +76,8 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
   cursor: pointer; border: 2px solid transparent; transition: all .18s ease;
   white-space: nowrap;
 }
-.btn--primary { background: var(--accent); color: #1a0e05; box-shadow: 0 8px 22px rgba(255, 106, 19, .32); }
-.btn--primary:hover { background: var(--accent-2); color: #1a0e05; transform: translateY(-2px); }
+.btn--primary { background: var(--accent); color: #141003; box-shadow: 0 8px 22px rgba(245, 196, 0, .25); }
+.btn--primary:hover { background: var(--accent-2); color: #141003; transform: translateY(-2px); }
 .btn--ghost { background: transparent; color: var(--text); border-color: var(--steel-500); }
 .btn--ghost:hover { border-color: var(--accent); color: var(--accent-2); }
 .btn--wa { background: var(--green); color: #05230f; box-shadow: 0 8px 22px rgba(47, 191, 113, .3); }
@@ -86,14 +87,14 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 /* ---------- Header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(15, 17, 21, .82);
+  background: rgba(8, 17, 36, .85);
   backdrop-filter: saturate(140%) blur(12px);
   border-bottom: 1px solid var(--line);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .brand { display: flex; align-items: center; gap: .65rem; font-weight: 800; font-size: 1.15rem; color: var(--white); letter-spacing: -.02em; }
 .brand:hover { color: var(--white); }
-.brand svg { width: 38px; height: 38px; flex: none; }
+.brand svg, .brand img { width: 38px; height: 38px; flex: none; border-radius: 8px; }
 .brand span b { color: var(--accent); }
 .nav-links { display: flex; align-items: center; gap: 26px; list-style: none; margin: 0; padding: 0; }
 .nav-links a { color: var(--text-dim); font-weight: 600; font-size: .96rem; }
@@ -106,7 +107,7 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 .hero {
   position: relative; padding: 92px 0 84px; overflow: hidden;
   background:
-    radial-gradient(1100px 520px at 78% -8%, rgba(255, 106, 19, .18), transparent 60%),
+    radial-gradient(1100px 520px at 78% -8%, rgba(245, 196, 0, .14), transparent 60%),
     radial-gradient(900px 500px at 10% 110%, rgba(47, 191, 113, .08), transparent 55%),
     linear-gradient(180deg, var(--steel-800), var(--steel-900));
 }
@@ -143,15 +144,15 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
   color: var(--text); font-size: .96rem; font-family: inherit;
 }
 .quote-field input:focus, .quote-field select:focus, .quote-field textarea:focus {
-  outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(255, 106, 19, .18);
+  outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(245, 196, 0, .22);
 }
 .quote-field textarea { resize: vertical; min-height: 74px; }
 
 /* ---------- Photo hero variant ---------- */
 .hero--photo {
   background:
-    linear-gradient(180deg, rgba(15, 17, 21, .72) 0%, rgba(15, 17, 21, .55) 45%, rgba(15, 17, 21, .9) 100%),
-    url("/assets/img/hero.svg") center 64% / cover no-repeat,
+    linear-gradient(180deg, rgba(5, 12, 30, .82) 0%, rgba(5, 12, 30, .62) 45%, rgba(6, 13, 32, .94) 100%),
+    url("/assets/photos/razor-wire-boundary-wall.jpg") center 58% / cover no-repeat,
     var(--steel-900);
 }
 .hero--photo::after { display: none; }
@@ -185,7 +186,7 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 .card--media:hover .card-img { transform: scale(1.04); }
 .card .ico {
   width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center;
-  background: rgba(255, 106, 19, .12); color: var(--accent-2); margin-bottom: 18px;
+  background: rgba(245, 196, 0, .12); color: var(--accent-2); margin-bottom: 18px;
 }
 .card .ico svg { width: 28px; height: 28px; }
 .card h3 { color: var(--white); }
@@ -229,7 +230,7 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 .step { position: relative; padding-top: 8px; }
 .step .num {
   width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center;
-  background: var(--accent); color: #1a0e05; font-weight: 800; font-size: 1.15rem; margin-bottom: 16px;
+  background: var(--accent); color: #141003; font-weight: 800; font-size: 1.15rem; margin-bottom: 16px;
 }
 .step h4 { color: var(--white); margin-bottom: 6px; }
 .step p { font-size: .95rem; margin: 0; }
@@ -248,14 +249,14 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 /* ---------- CTA band ---------- */
 .cta-band {
   background:
-    radial-gradient(600px 300px at 80% 20%, rgba(255, 106, 19, .22), transparent 60%),
-    linear-gradient(135deg, var(--accent-dark), #7a3106);
+    radial-gradient(620px 320px at 80% 18%, rgba(245, 196, 0, .3), transparent 62%),
+    linear-gradient(135deg, #143166, #071531);
   border-radius: 20px; padding: 54px 44px; text-align: center; box-shadow: var(--shadow-lg);
 }
 .cta-band h2 { color: #fff; }
 .cta-band p { color: rgba(255, 255, 255, .9); max-width: 620px; margin: 0 auto 26px; font-size: 1.1rem; }
-.cta-band .btn--primary { background: #fff; color: var(--accent-dark); }
-.cta-band .btn--primary:hover { background: #fff5ee; }
+.cta-band .btn--primary { background: var(--accent); color: #141003; }
+.cta-band .btn--primary:hover { background: var(--accent-2); }
 .cta-band .btn--ghost { border-color: rgba(255, 255, 255, .6); color: #fff; }
 .cta-band .btn--ghost:hover { border-color: #fff; color: #fff; background: rgba(255,255,255,.08); }
 .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }

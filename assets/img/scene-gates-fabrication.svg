@@ -23,8 +23,8 @@
       <path d="M-24 -56 C -12 -64 18 -65 30 -58" opacity=".9"/>
     </g><path d="M560.0 115 q5.0 -7.0 10.0 0 q5.0 -7.0 10.0 0" stroke="#101318" stroke-width="2.0" fill="none" stroke-linecap="round"/><path d="M586.0 105 q5.0 -7.0 10.0 0 q5.0 -7.0 10.0 0" stroke="#101318" stroke-width="2.0" fill="none" stroke-linecap="round"/><path d="M612.0 115 q5.0 -7.0 10.0 0 q5.0 -7.0 10.0 0" stroke="#101318" stroke-width="2.0" fill="none" stroke-linecap="round"/>
       <rect x="148" y="268" width="44" height="172" fill="#101318"/>
-      <rect x="142" y="256" width="56" height="14" rx="3" fill="#101318"/><line x1="142" y1="256" x2="198" y2="256" stroke="#ffb066" stroke-width="1.6" opacity="0.5"/>
-      <rect x="200" y="296" width="392" height="12" fill="#171b22"/><line x1="200" y1="296" x2="592" y2="296" stroke="#ffb066" stroke-width="1.6" opacity="0.5"/>
+      <rect x="142" y="256" width="56" height="14" rx="3" fill="#101318"/><line x1="142" y1="256" x2="198" y2="256" stroke="#ffd45e" stroke-width="1.6" opacity="0.5"/>
+      <rect x="200" y="296" width="392" height="12" fill="#171b22"/><line x1="200" y1="296" x2="592" y2="296" stroke="#ffd45e" stroke-width="1.6" opacity="0.5"/>
       <rect x="200" y="424" width="392" height="10" fill="#171b22"/>
       <rect x="200" y="296" width="10" height="138" fill="#171b22"/>
       <rect x="582" y="296" width="10" height="138" fill="#171b22"/>

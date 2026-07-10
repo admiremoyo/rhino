@@ -253,8 +253,16 @@ ALL = [(s["name"], s["slug"]) for s in SERVICES]
 def icon_arrow():
     return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 
+PHOTOS = {
+    "clear-view-fence": "/assets/photos/clear-view-fence-wall.jpg",
+    "razor-wire": "/assets/photos/razor-wire-boundary-wall.jpg",
+    "diamond-mesh-fence": "/assets/photos/farm-fence-gate-veld.jpg",
+    "game-field-fence": "/assets/photos/farm-fence-gate-veld.jpg",
+}
+
 def render(s):
     url = f"{BASE}/services/{s['slug']}.html"
+    hero_bg = PHOTOS.get(s["slug"], f"/assets/img/scene-{s['slug']}.svg")
     # related services (all others)
     related = [x for x in ALL if x[1] != s["slug"]][:6]
     related_html = "\n".join(
@@ -293,7 +301,7 @@ def render(s):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0f1115">
+<meta name="theme-color" content="#081124">
 <title>{s["title"]}</title>
 <meta name="description" content="{s["meta"]}">
 <meta name="keywords" content="{s["keywords"]}">
@@ -310,8 +318,8 @@ def render(s):
 <meta name="twitter:title" content="{name_plain} — RhinoFence Zimbabwe">
 <meta name="twitter:description" content="{s["meta"]}">
 <meta name="twitter:image" content="{BASE}/assets/social-card.svg">
-<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/assets/logo.svg">
+<link rel="icon" href="/assets/brand/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/brand/icon-192.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/styles.css">
 <script type="application/ld+json">
@@ -362,7 +370,7 @@ def render(s):
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="/" aria-label="RhinoFence Fencing Zimbabwe home">
-      <img src="/assets/logo.svg" width="38" height="38" alt="" aria-hidden="true">
+      <img src="/assets/brand/icon-192.png" width="38" height="38" alt="" aria-hidden="true">
       <span>Rhino<b>Fence</b></span>
     </a>
     <nav aria-label="Primary">
@@ -386,7 +394,7 @@ def render(s):
 </header>
 
 <main>
-<section class="page-hero page-hero--photo" style="background-image: linear-gradient(180deg, rgba(15,17,21,.78) 0%, rgba(15,17,21,.6) 45%, rgba(15,17,21,.94) 100%), url('/assets/img/scene-{s["slug"]}.svg')">
+<section class="page-hero page-hero--photo" style="background-image: linear-gradient(180deg, rgba(5,12,30,.82) 0%, rgba(5,12,30,.62) 45%, rgba(6,13,32,.94) 100%), url('{hero_bg}')">
   <div class="container">
     <nav class="crumbs" aria-label="Breadcrumb">
       <a href="/">Home</a> &rsaquo; <a href="/#services">Services</a> &rsaquo; <span>{s["name"]}</span>
@@ -457,7 +465,7 @@ def render(s):
     <div class="foot-grid">
       <div class="foot-about">
         <a class="brand" href="/" style="margin-bottom:14px">
-          <img src="/assets/logo.svg" width="38" height="38" alt="" aria-hidden="true">
+          <img src="/assets/brand/icon-192.png" width="38" height="38" alt="" aria-hidden="true">
           <span>Rhino<b>Fence</b></span>
         </a>
         <p>RhinoFence Fencing Zimbabwe — clear view, palisade, diamond mesh, electric &amp; game fencing, razor wire, gates, steel structures and welding across Harare, Mvurwi and nationwide.</p>
