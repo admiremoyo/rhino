@@ -393,7 +393,6 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
   .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 26px; }
   .foot-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
   .sidebar-cta { position: static; }
-  .hero-card { order: -1; }
 }
 @media (max-width: 640px) {
   body { font-size: 16px; }
@@ -402,6 +401,11 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
   .ind-grid { grid-template-columns: repeat(2, 1fr); }
   .nav-links, .nav-cta .btn--ghost { display: none; }
   .nav-toggle { display: block; }
+  .nav { gap: 10px; }
+  .brand { font-size: 1.02rem; flex-shrink: 1; min-width: 0; }
+  .brand span { white-space: nowrap; }
+  .nav-cta { gap: 8px; flex-shrink: 0; }
+  .nav-cta .btn--primary { padding: 9px 16px; font-size: .88rem; }
   .nav-links.open {
     display: flex; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0;
     background: var(--steel-800); border-bottom: 1px solid var(--line); padding: 18px 22px; gap: 8px;

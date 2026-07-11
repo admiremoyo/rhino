@@ -21,12 +21,28 @@
   },
   "routes": [
     {
+      "route": "/assets/styles.css",
+      "headers": {
+        "Cache-Control": "public, max-age=300, must-revalidate"
+      }
+    },
+    {
+      "route": "/assets/main.js",
+      "headers": {
+        "Cache-Control": "public, max-age=300, must-revalidate"
+      }
+    },
+    {
       "route": "/assets/*",
-      "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
     },
     {
       "route": "/*.html",
-      "headers": { "Cache-Control": "public, max-age=3600, must-revalidate" }
+      "headers": {
+        "Cache-Control": "public, max-age=3600, must-revalidate"
+      }
     }
   ]
 }
