@@ -4,18 +4,19 @@
    ========================================================================== */
 
 :root {
-  /* Brand: RhinoFence navy + gold (from logo: navy #031f4d, gold #f0c000) */
-  --steel-900: #081124;
-  --steel-800: #0d1a36;
-  --steel-700: #142548;
-  --steel-600: #1d3260;
-  --steel-500: #2e4478;
-  --line: #20335e;
+  /* Brand palette taken EXACTLY from the RhinoFence logo:
+     navy #031f4d (header/surfaces hue), gold #f0c000 (accent) */
+  --steel-900: #04132e;
+  --steel-800: #052047;
+  --steel-700: #0a2c5e;
+  --steel-600: #123a74;
+  --steel-500: #23508f;
+  --line: #163765;
   --text: #eaeef6;
-  --text-dim: #aab6d2;
-  --text-mute: #8290b0;
-  --accent: #f5c400;      /* brand gold */
-  --accent-2: #ffd23d;
+  --text-dim: #aab9d8;
+  --text-mute: #7f93b8;
+  --accent: #f0c000;      /* logo gold, exact */
+  --accent-2: #ffd428;
   --accent-dark: #b38f00;
   --green: #2fbf71;       /* trust / go */
   --white: #ffffff;
@@ -87,7 +88,7 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 /* ---------- Header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(8, 17, 36, .85);
+  background: rgba(3, 31, 77, .88);
   backdrop-filter: saturate(140%) blur(12px);
   border-bottom: 1px solid var(--line);
 }
@@ -151,7 +152,7 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 /* ---------- Photo hero variant ---------- */
 .hero--photo {
   background:
-    linear-gradient(180deg, rgba(5, 12, 30, .82) 0%, rgba(5, 12, 30, .62) 45%, rgba(6, 13, 32, .94) 100%),
+    linear-gradient(180deg, rgba(3, 22, 52, .84) 0%, rgba(3, 22, 52, .6) 45%, rgba(4, 19, 46, .95) 100%),
     url("/assets/photos/razor-wire-boundary-wall.jpg") center 58% / cover no-repeat,
     var(--steel-900);
 }
@@ -225,8 +226,44 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 .showcase-grid img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
 .showcase-grid figcaption { padding: 15px 19px; font-size: .93rem; color: var(--text-dim); font-weight: 600; }
 
+/* ---------- Industries ---------- */
+.ind-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.ind {
+  display: flex; align-items: center; gap: 12px;
+  background: linear-gradient(160deg, var(--steel-700), var(--steel-800));
+  border: 1px solid var(--line); border-radius: var(--radius-sm);
+  padding: 16px 18px; font-weight: 700; color: var(--text);
+  transition: transform .18s ease, border-color .18s ease;
+}
+.ind:hover { transform: translateY(-3px); border-color: var(--accent); }
+.ind span.emoji { font-size: 1.45rem; }
+
+/* ---------- Motto ---------- */
+.motto { font-weight: 800; letter-spacing: .06em; color: var(--white); font-size: 1.05rem; }
+.motto b { color: var(--accent); }
+
+/* ---------- Floating utilities ---------- */
+.to-top {
+  position: fixed; right: 20px; bottom: 92px; z-index: 60;
+  width: 46px; height: 46px; border-radius: 12px; border: 1px solid var(--line);
+  background: var(--steel-700); color: var(--text); display: grid; place-items: center;
+  cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .25s ease, transform .18s ease;
+}
+.to-top.show { opacity: 1; pointer-events: auto; }
+.to-top:hover { transform: translateY(-3px); border-color: var(--accent); color: var(--accent-2); }
+.to-top svg { width: 20px; height: 20px; }
+.call-fab { display: none; }
+@media (max-width: 640px) {
+  .call-fab {
+    display: grid; place-items: center; position: fixed; left: 20px; bottom: 20px; z-index: 60;
+    width: 58px; height: 58px; border-radius: 50%; background: var(--accent); color: #141003;
+    box-shadow: 0 10px 26px rgba(240, 192, 0, .4);
+  }
+  .call-fab svg { width: 26px; height: 26px; }
+}
+
 /* ---------- Process ---------- */
-.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; counter-reset: step; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 34px 22px; counter-reset: step; }
 .step { position: relative; padding-top: 8px; }
 .step .num {
   width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center;
@@ -351,6 +388,7 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 @media (max-width: 960px) {
   .hero-grid, .split, .layout-2col { grid-template-columns: 1fr; gap: 36px; }
   .grid--3 { grid-template-columns: repeat(2, 1fr); }
+  .ind-grid { grid-template-columns: repeat(3, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 26px; }
   .foot-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
@@ -361,6 +399,7 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
   body { font-size: 16px; }
   .section { padding: 62px 0; }
   .grid--3, .grid--2, .loc-grid, .showcase-grid { grid-template-columns: 1fr; }
+  .ind-grid { grid-template-columns: repeat(2, 1fr); }
   .nav-links, .nav-cta .btn--ghost { display: none; }
   .nav-toggle { display: block; }
   .nav-links.open {
