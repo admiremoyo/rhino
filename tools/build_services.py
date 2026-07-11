@@ -326,7 +326,7 @@ def render(s):
 <link rel="icon" href="/assets/brand/icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/brand/icon-192.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/styles.css?v=4">
+<link rel="stylesheet" href="/assets/styles.css?v=5">
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -519,7 +519,7 @@ def render(s):
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5 0a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.2 0-.3 0-.5s-.5-1.3-.7-1.7-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3A3 3 0 0 0 6.3 9c0 1.8 1.3 3.5 1.5 3.7s2.6 4 6.3 5.4c.9.4 1.6.6 2.1.5.6-.1 1.4-.6 1.6-1.1s.2-1 .2-1.1-.2-.2-.5-.4z"/></svg>
 </a>
 
-<script src="/assets/main.js?v=4" defer></script>
+<script src="/assets/main.js?v=5" defer></script>
 </body>
 </html>
 '''

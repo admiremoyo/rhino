@@ -158,6 +158,22 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 }
 .hero--photo::after { display: none; }
 
+/* ---------- Hero slideshow (JS crossfade over the static fallback) ---------- */
+.hero-slides { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero-slide {
+  position: absolute; inset: 0; opacity: 0;
+  background-size: cover; background-position: center 62%;
+  transition: opacity 1.4s ease;
+}
+.hero-slide.active { opacity: 1; }
+.hero-slides::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(3, 22, 52, .84) 0%, rgba(3, 22, 52, .6) 45%, rgba(4, 19, 46, .95) 100%);
+}
+@media (max-width: 640px) {
+  .hero-slide { background-position: center 70%; }
+}
+
 /* ---------- Marquee / stats ---------- */
 .stat-strip { background: var(--steel-800); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 34px 0; }

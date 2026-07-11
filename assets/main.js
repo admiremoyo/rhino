@@ -65,6 +65,40 @@
     counters.forEach(function (el) { io.observe(el); });
   }
 
+  // Hero slideshow: crossfade through real fence photos so visitors
+  // instantly see what the company does. Starts after page load so it
+  // never slows the first paint; respects reduced-motion preferences.
+  var slidesHost = document.querySelector(".hero-slides");
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (slidesHost && !reduceMotion) {
+    var urls = (slidesHost.getAttribute("data-slides") || "").split(",").filter(Boolean);
+    if (urls.length > 1) {
+      var layers = [], current = 0, started = false;
+      var makeLayer = function (url) {
+        var d = document.createElement("div");
+        d.className = "hero-slide";
+        d.style.backgroundImage = "url('" + url + "')";
+        slidesHost.insertBefore(d, slidesHost.firstChild);
+        return d;
+      };
+      var start = function () {
+        if (started) return;
+        started = true;
+        // first layer = same photo as the static CSS fallback, shown at once
+        layers = urls.map(makeLayer);
+        layers[0].classList.add("active");
+        setInterval(function () {
+          if (document.hidden) return;
+          layers[current].classList.remove("active");
+          current = (current + 1) % layers.length;
+          layers[current].classList.add("active");
+        }, 6000);
+      };
+      if (document.readyState === "complete") setTimeout(start, 1500);
+      else window.addEventListener("load", function () { setTimeout(start, 1500); });
+    }
+  }
+
   // Scroll-to-top button
   var toTop = document.querySelector(".to-top");
   if (toTop) {
