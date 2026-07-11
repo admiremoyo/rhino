@@ -288,12 +288,16 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 .to-top svg { width: 20px; height: 20px; }
 .call-fab { display: none; }
 @media (max-width: 640px) {
+  /* one tidy floating stack, bottom-right: WhatsApp below, Call above */
   .call-fab {
-    display: grid; place-items: center; position: fixed; left: 20px; bottom: 20px; z-index: 60;
-    width: 58px; height: 58px; border-radius: 50%; background: var(--accent); color: #141003;
+    display: grid; place-items: center; position: fixed; right: 20px; bottom: 86px; z-index: 60;
+    width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: #141003;
     box-shadow: 0 10px 26px rgba(240, 192, 0, .4);
   }
-  .call-fab svg { width: 26px; height: 26px; }
+  .call-fab svg { width: 24px; height: 24px; }
+  .fab { width: 52px; height: 52px; }
+  .fab svg { width: 26px; height: 26px; }
+  .to-top { display: none; }
 }
 
 /* ---------- Process ---------- */
@@ -422,6 +426,7 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 @media (max-width: 960px) {
   .nav-cta .btn { padding: 11px 18px; font-size: .93rem; }
   .hero-grid, .split, .layout-2col { grid-template-columns: 1fr; gap: 36px; }
+  .hero-grid .carousel { order: -1; }
   .grid--3 { grid-template-columns: repeat(2, 1fr); }
   .ind-grid { grid-template-columns: repeat(3, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
@@ -432,6 +437,8 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 @media (max-width: 640px) {
   body { font-size: 16px; }
   .section { padding: 62px 0; }
+  .hero { padding: 34px 0 56px; }
+  .hero-grid { gap: 28px; }
   .grid--3, .grid--2, .loc-grid, .showcase-grid { grid-template-columns: 1fr; }
   .ind-grid { grid-template-columns: repeat(2, 1fr); }
   .nav-links, .nav-cta .btn--ghost { display: none; }
