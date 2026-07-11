@@ -257,7 +257,10 @@ PHOTOS = {
     "clear-view-fence": "/assets/photos/clear-view-fence-wall.jpg",
     "razor-wire": "/assets/photos/razor-wire-boundary-wall.jpg",
     "diamond-mesh-fence": "/assets/photos/farm-fence-gate-veld.jpg",
-    "game-field-fence": "/assets/photos/farm-fence-gate-veld.jpg",
+    "game-field-fence": "/assets/photos/game-fence-veld.jpg",
+    "palisade-fence": "/assets/photos/palisade-fence-industrial.jpg",
+    "welding-steel-works": "/assets/photos/welding-workshop.jpg",
+    "steel-structures": "/assets/photos/welding-workshop.jpg",
 }
 
 def render(s):
