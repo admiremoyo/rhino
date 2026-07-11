@@ -30,10 +30,10 @@
 
 <link rel="icon" href="/assets/brand/icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/brand/icon-192.png">
-<link rel="preload" href="/assets/photos/razor-wire-boundary-wall.jpg" as="image">
+<link rel="preload" href="/assets/photos/hero/razor-wire-boundary-wall.jpg" as="image">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preload" href="/assets/styles.css?v=6" as="style">
-<link rel="stylesheet" href="/assets/styles.css?v=6">
+<link rel="preload" href="/assets/styles.css?v=7" as="style">
+<link rel="stylesheet" href="/assets/styles.css?v=7">
 
 <!-- Structured data: LocalBusiness -->
 <script type="application/ld+json">
@@ -168,8 +168,7 @@
 
 <main>
 <!-- ============ HERO ============ -->
-<section class="hero hero--photo">
-  <div class="hero-slides" aria-hidden="true" data-slides="/assets/photos/hero/razor-wire-boundary-wall.jpg,/assets/photos/hero/clear-view-fence-wall.jpg,/assets/photos/hero/palisade-fence-industrial.jpg,/assets/photos/hero/electric-fence-wall-top.jpg,/assets/photos/hero/game-fence-veld.jpg,/assets/photos/hero/custom-steel-gate.jpg"></div>
+<section class="hero">
   <div class="container hero-grid">
     <div>
       <p class="eyebrow">Secure · Protect · Build</p>
@@ -187,7 +186,43 @@
       </div>
     </div>
 
-    <aside class="hero-card" id="quote">
+    <div class="carousel" aria-label="Examples of our fencing and steel work">
+      <img class="c-slide active" src="/assets/photos/hero/razor-wire-boundary-wall.jpg" alt="Concertina razor wire on a residential boundary wall" width="1200" height="900" data-label="Razor Wire">
+      <img class="c-slide" src="/assets/photos/hero/clear-view-fence-wall.jpg" alt="Clear view anti-climb fence panels on a brick wall" width="1200" height="900" loading="lazy" data-label="Clear View Fence">
+      <img class="c-slide" src="/assets/photos/hero/palisade-fence-industrial.jpg" alt="Galvanised steel palisade fence at an industrial site" width="1200" height="900" loading="lazy" data-label="Palisade Fence">
+      <img class="c-slide" src="/assets/photos/hero/electric-fence-wall-top.jpg" alt="Wall-top electric fence with warning signage" width="1200" height="900" loading="lazy" data-label="Electric Fence">
+      <img class="c-slide" src="/assets/photos/hero/game-fence-veld.jpg" alt="Game fence line across open bushland" width="1200" height="900" loading="lazy" data-label="Game Fence">
+      <img class="c-slide" src="/assets/photos/hero/custom-steel-gate.jpg" alt="Custom fabricated double swing gate" width="1200" height="900" loading="lazy" data-label="Gates Fabrication">
+      <span class="c-label">Our work: <b data-c-label>Razor Wire</b></span>
+      <div class="c-dots" role="tablist" aria-label="Choose slide"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stat-strip" aria-label="Company highlights">
+  <div class="container stat-grid">
+    <div class="stat"><b data-count="10" data-suffix="+">0+</b><span>Fencing &amp; Steel Services</span></div>
+    <div class="stat"><b data-count="2">0</b><span>Branches — Harare &amp; Mvurwi</span></div>
+    <div class="stat"><b data-count="100" data-suffix="%">0%</b><span>Nationwide Service</span></div>
+    <div class="stat"><b>Free</b><span>Site Visits &amp; Quotations</span></div>
+  </div>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<section class="section section--tight" id="quote" style="background:var(--steel-800);border-bottom:1px solid var(--line)">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Free Quotation</p>
+      <h2>Tell Us What You Need Secured</h2>
+      <p>Send a few details and we'll reply fast on WhatsApp with a free, no-obligation quotation — or call us directly.</p>
+      <div class="hero-cta">
+        <a class="btn btn--primary" href="tel:+263714194324">📞 0714 194 324</a>
+        <a class="btn btn--ghost" href="tel:+263783394176">📞 0783 394 176</a>
+      </div>
+      <p style="font-size:.95rem;color:var(--text-mute)">Open Monday–Saturday, 8am–5pm · Harare &amp; Mvurwi · Nationwide installations</p>
+    </div>
+    <aside class="hero-card">
       <h3>Request a Free Quote</h3>
       <p class="muted">Tell us what you need — we'll reply fast on WhatsApp.</p>
       <form id="quote-form">
@@ -221,16 +256,6 @@
         <button class="btn btn--primary" type="submit" style="width:100%">Send via WhatsApp</button>
       </form>
     </aside>
-  </div>
-</section>
-
-<!-- ============ STATS ============ -->
-<section class="stat-strip" aria-label="Company highlights">
-  <div class="container stat-grid">
-    <div class="stat"><b data-count="10" data-suffix="+">0+</b><span>Fencing &amp; Steel Services</span></div>
-    <div class="stat"><b data-count="2">0</b><span>Branches — Harare &amp; Mvurwi</span></div>
-    <div class="stat"><b data-count="100" data-suffix="%">0%</b><span>Nationwide Service</span></div>
-    <div class="stat"><b>Free</b><span>Site Visits &amp; Quotations</span></div>
   </div>
 </section>
 
@@ -666,6 +691,6 @@
 <a class="call-fab" href="tel:+263714194324" aria-label="Call RhinoFence now">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7l.7 3a2 2 0 0 1-.5 1.9L7.6 10a16 16 0 0 0 6 6l1.4-1.6a2 2 0 0 1 1.9-.5l3 .7A2 2 0 0 1 22 16.9z"/></svg>
 </a>
-<script src="/assets/main.js?v=6" defer></script>
+<script src="/assets/main.js?v=7" defer></script>
 </body>
 </html>

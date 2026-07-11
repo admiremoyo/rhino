@@ -65,37 +65,39 @@
     counters.forEach(function (el) { io.observe(el); });
   }
 
-  // Hero slideshow: crossfade through real fence photos so visitors
-  // instantly see what the company does. Starts after page load so it
-  // never slows the first paint; respects reduced-motion preferences.
-  var slidesHost = document.querySelector(".hero-slides");
-  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (slidesHost && !reduceMotion) {
-    var urls = (slidesHost.getAttribute("data-slides") || "").split(",").filter(Boolean);
-    if (urls.length > 1) {
-      var layers = [], current = 0, started = false;
-      var makeLayer = function (url) {
-        var d = document.createElement("div");
-        d.className = "hero-slide";
-        d.style.backgroundImage = "url('" + url + "')";
-        slidesHost.insertBefore(d, slidesHost.firstChild);
-        return d;
-      };
-      var start = function () {
-        if (started) return;
-        started = true;
-        // first layer = same photo as the static CSS fallback, shown at once
-        layers = urls.map(makeLayer);
-        layers[0].classList.add("active");
-        setInterval(function () {
-          if (document.hidden) return;
-          layers[current].classList.remove("active");
-          current = (current + 1) % layers.length;
-          layers[current].classList.add("active");
-        }, 6000);
-      };
-      if (document.readyState === "complete") setTimeout(start, 1500);
-      else window.addEventListener("load", function () { setTimeout(start, 1500); });
+  // Hero carousel: bright, un-dimmed photos of real installations,
+  // crossfading with a label naming each fence type. Dots allow manual
+  // selection; auto-advance pauses in hidden tabs and respects
+  // reduced-motion preferences.
+  var car = document.querySelector(".carousel");
+  if (car) {
+    var slides = Array.prototype.slice.call(car.querySelectorAll(".c-slide"));
+    var label = car.querySelector("[data-c-label]");
+    var dotsHost = car.querySelector(".c-dots");
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var idx = 0, dots = [];
+    var goTo = function (i) {
+      slides[idx].classList.remove("active");
+      if (dots[idx]) dots[idx].classList.remove("active");
+      idx = (i + slides.length) % slides.length;
+      slides[idx].classList.add("active");
+      if (dots[idx]) dots[idx].classList.add("active");
+      if (label) label.textContent = slides[idx].getAttribute("data-label") || "";
+    };
+    if (dotsHost && slides.length > 1) {
+      slides.forEach(function (_, i) {
+        var b = document.createElement("button");
+        b.className = "c-dot" + (i === 0 ? " active" : "");
+        b.setAttribute("aria-label", "Show slide " + (i + 1));
+        b.addEventListener("click", function () { goTo(i); });
+        dotsHost.appendChild(b);
+        dots.push(b);
+      });
+    }
+    if (slides.length > 1 && !reduceMotion) {
+      setInterval(function () {
+        if (!document.hidden) goTo(idx + 1);
+      }, 5000);
     }
   }
 
