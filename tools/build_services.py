@@ -2,7 +2,7 @@
 """Generate SEO-optimised service pages for RhinoFence Fencing Zimbabwe."""
 import os, html
 
-BASE = "https://rhinofencezimbabwe.co.zw"
+BASE = "https://www.rhinofencefencingzimbabwe.co.zw"
 # Output to <repo-root>/services regardless of where the script is run from
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "services")
 os.makedirs(OUT, exist_ok=True)

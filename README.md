@@ -78,12 +78,14 @@ The repo ships with a ready CI/CD workflow at
 > **Note:** The site is static with no build step, so `skip_app_build: true` is
 > set to upload files as-is.
 
-## After going live — update the domain
+## Domain
 
-Search-engine URLs (canonical tags, `sitemap.xml`, `robots.txt`, Open Graph,
-JSON-LD) currently use the placeholder domain **`rhinofencezimbabwe.co.zw`**.
-Once the real domain is confirmed and added in Azure (**Custom domains**),
-find-and-replace that placeholder across the project, then commit.
+All search-engine URLs (canonical tags, `sitemap.xml`, `robots.txt`, Open
+Graph, JSON-LD) use the production domain
+**`https://www.rhinofencefencingzimbabwe.co.zw`**. The domain must be added in
+Azure Static Web Apps (**Custom domains**) with a CNAME from `www` to the
+default `*.azurestaticapps.net` hostname. The sitemap to submit in Google
+Search Console is `https://www.rhinofencefencingzimbabwe.co.zw/sitemap.xml`.
 
 ## Regenerating service pages
 
